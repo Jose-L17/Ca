@@ -1,0 +1,131 @@
+<div class="calculator"></div>
+<!--
+<main>
+  <section>
+    <h1>Calculadora</h1>
+  </section>
+
+  <div class="container">
+      <div class="col">
+        <div class="card" style="width: 18rem; margin: 1rem 0rem">
+          <div class="card-body">
+            <form>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <input id="operator1" [(ngModel)]="operator1" type="number" class="form-control operator1"
+                  name="operator1" placeholder="0.0" />
+              </div>
+
+              <div class="input-group" style="margin-top: 3rem">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <input id="operator2" [(ngModel)]="operator2" type="number" class="form-control operator2"
+                  name="operator2" placeholder="0.0" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card; row" style="width: 20rem; margin: 1rem 0rem">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <button type="button" class="btn btn-primary addition-button" (click)="addition()" style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Suma
+                  </p>
+              </button>
+
+              <button type="button" class="btn btn-secondary substraction-button"  (click)="substraction()"  style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Resta
+                  </p>
+              </button>
+
+              <button type="button" class="btn btn-success divition-button"(click)="division()"  style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Division
+                  </p>
+              </button>
+
+              <button type="button" class="btn btn-danger multiplication-button"  (click)="multiplication()"  style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500" >
+                    Multiplicacion
+                  </p>
+              </button>
+
+              <button type="button" class="btn btn-warning exp-button"  (click)="exp()"  style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Exponente
+                  </p>
+              </button>
+
+              <button type="button" class="btn btn-light sqr-button" (click)="sqr()" style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Cuadrado
+                  </p>
+              </button>
+
+              <button type="button" class="btn btn-info sqrt-button" (click)="sqrt()"  style="width: 20rem; height: 6rem; padding: 0; margin: 1rem 0rem;">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Raíz
+                  </p>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <section>
+          <div class="card text-center" style="width: 20rem; margin: 1rem 0rem">
+            <div class="card-header">Resultado</div>
+            <div class="card-body">
+              <span class="result">{{ text }}</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+</main>
+-->
+
+<main class="contenedor">
+  <article class="container">
+    <header>
+      <h1 class="Titulo__calculadora">Calculadora</h1>
+    </header>
+
+    <section class="Input_Group">
+      <input
+        class="Input_Calculadora"
+        id="operator1"
+        [(ngModel)]="operator1"
+        type="number"
+        name="operator1"
+        placeholder="0.0"
+      />
+      <div class="Simbolo_Operacion">{{ Operacion }}</div>
+      <input
+        class="Input_Calculadora"
+        id="operator2"
+        [(ngModel)]="operator2"
+        type="number"
+        name="operator2"
+        placeholder="0.0"
+      />
+
+      <div class="Result">{{text}}</div>
+    </section>
+
+    <section class="Botones Botones_Group">
+
+      <button class="modulo-method" (click)="Modulo()">Módulo</button>
+      <button class="maximo-method"  (click)="Maximo()">Máximo</button>
+      <button class="minimo-method"  (click)="Minimo()">Mínimo</button>
+      <button class="logaritmo-method"  (click)="Media()">Logaritmo</button>
+      <button class="media-method"  (click)="Logaritmo()">Media aritmética</button>
+    </section>
+  </article>
+</main>
