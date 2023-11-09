@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { By } from "@angular/platform-browser";
 
 import { modulo } from "../modulo/modulo";
+import { maximo } from "../maximo/maximo";
 
 //Suma---------------------------------------------
 describe("Ui Addition - Component", () => {
@@ -61,5 +62,53 @@ describe("Ui Addition - Component", () => {
     );
     modulo.triggerEventHandler("click", null);
     expect(component.result).toBe(2);
+  });
+});
+
+describe("Ui Maximo - Component", () => {
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [UiComponent],
+      imports: [FormsModule],
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it("Should call maximo method", () => {
+    let result = 0;
+    result = maximo(10, 2);
+    expect(result).toBe(10);
+  });
+
+  it("should substract operator1 and operator2 when i click the maximo-method ", () => {
+    component.operator1 = 5;
+    component.operator2 = 2;
+    let maximoButton = fixture.debugElement.query(By.css(".maximo-method"));
+
+    // Verifica que se haya encontrado el botón
+    expect(maximoButton).toBeTruthy();
+
+    // Dispara el evento 'click' en el botón
+    maximoButton.triggerEventHandler("click", null);
+
+    expect(component.result).toBe(5);
+  });
+
+  it("Should render substraction in result div", () => {
+    component.operator1 = 5;
+    component.operator2 = 5;
+    component.Maximo();
+    fixture.detectChanges();
+    let de = fixture.debugElement.query(By.css(".Result"));
+    let el: HTMLElement = de.nativeElement;
+    expect(el.innerText).toContain("");
   });
 });
