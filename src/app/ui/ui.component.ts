@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { modulo } from '../modulo/modulo';
 import { maximo } from '../maximo/maximo';
 
-
 @Component({
   selector: 'app-ui',
   templateUrl: './ui.component.html',
@@ -38,5 +37,4 @@ export class UiComponent implements OnInit {
     this.Operacion = " Max "
     this.text = "El Maximo es: " + this.result;
   }
-
 }
