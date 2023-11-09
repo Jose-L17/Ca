@@ -6,6 +6,7 @@ import { By } from "@angular/platform-browser";
 import { modulo } from "../modulo/modulo";
 import { maximo } from "../maximo/maximo";
 import { minimo } from "../minimo/minimo";
+import { media } from "../media/media";
 
 //Suma---------------------------------------------
 describe("Ui Addition - Component", () => {
@@ -179,5 +180,53 @@ describe("Ui Minimo - Component", () => {
     let de = fixture.debugElement.query(By.css(".Result"));
     let el: HTMLElement = de.nativeElement;
     expect(el.innerText).toContain("");
+  });
+});
+
+describe("Ui Media - Component", () => {
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [UiComponent],
+      imports: [FormsModule],
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it("Should call media method", () => {
+    let result = 0;
+    result = media(5, 2);
+    expect(result).toBe(3.5);
+  });
+
+  it("Should set operator1 model through ngModel", async () => {
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(
+      By.css('input[name="operator1"]')
+    ).nativeElement;
+    inputElement.value = "3.1416";
+    inputElement.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(component.operator1).toEqual(3.1416);
+  });
+
+  it("Should set operator2 model through ngModel", async () => {
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(
+      By.css('input[name="operator2"]')
+    ).nativeElement;
+    inputElement.value = "2.71";
+    inputElement.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(component.operator2).toEqual(2.71);
   });
 });
