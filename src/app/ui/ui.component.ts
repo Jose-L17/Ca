@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { addition } from "../addition/addition"
-import { substraction } from '../substraction/substraction';
-import { multiplication } from '../multiplication/multiplication';
-import { division } from '../division/division';
-import { exp } from '../exp/exp';
-import { sqr } from '../sqr/sqr';
-import { sqrt } from '../sqrt/sqrt';
 
 import { modulo } from '../modulo/modulo';
 import { maximo } from '../maximo/maximo';
 import { minimo } from '../minimo/minimo';
-import { logaritmo } from '../logaritmo/logaritmo';
 import { media } from '../media/media';
+import { logaritmo } from '../logaritmo/logaritmo';
 
 @Component({
   selector: 'app-ui',
@@ -71,6 +64,7 @@ export class UiComponent implements OnInit {
     this.Operacion = " Log "
     this.text = "El Logaritmo es: " + this.result;
   }
+
 
 
 }
