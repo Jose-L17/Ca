@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { modulo } from '../modulo/modulo';
 import { maximo } from '../maximo/maximo';
+import { minimo } from '../minimo/minimo';
+
 
 @Component({
   selector: 'app-ui',
@@ -37,4 +39,14 @@ export class UiComponent implements OnInit {
     this.Operacion = " Max "
     this.text = "El Maximo es: " + this.result;
   }
+
+  Minimo() {
+    let myresult = 1;
+    myresult = minimo(this.operator1, this.operator2);
+    this.result = myresult;
+    this.Operacion = " Min "
+    this.text = "El Minimo es: " + this.result;
+  }
+
+
 }
