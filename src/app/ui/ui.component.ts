@@ -4,7 +4,7 @@ import { modulo } from '../modulo/modulo';
 import { maximo } from '../maximo/maximo';
 import { minimo } from '../minimo/minimo';
 import { media } from '../media/media';
-
+import { logaritmo } from '../logaritmo/logaritmo';
 
 @Component({
   selector: 'app-ui',
@@ -56,5 +56,15 @@ export class UiComponent implements OnInit {
     this.Operacion = " Media "
     this.text = "La Media es: " + this.result;
   }
+
+  Logaritmo() {
+    let myresult = 1;
+    myresult = logaritmo(this.operator1, this.operator2);
+    this.result = myresult;
+    this.Operacion = " Log "
+    this.text = "El Logaritmo es: " + this.result;
+  }
+
+
 
 }
