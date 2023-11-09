@@ -4,10 +4,10 @@ import { FormsModule } from "@angular/forms";
 import { By } from "@angular/platform-browser";
 
 import { modulo } from "../modulo/modulo";
-import { logaritmo } from "../logaritmo/logaritmo";
 import { maximo } from "../maximo/maximo";
 import { minimo } from "../minimo/minimo";
 import { media } from "../media/media";
+import { logaritmo } from "../logaritmo/logaritmo";
 
 //Suma---------------------------------------------
 describe("Ui Addition - Component", () => {
@@ -231,6 +231,7 @@ describe("Ui Media - Component", () => {
     expect(component.operator2).toEqual(2.71);
   });
 });
+
 
 describe("Ui Logaritmo - Component", () => {
   let component: UiComponent;
