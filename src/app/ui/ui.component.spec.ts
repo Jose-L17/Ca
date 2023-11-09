@@ -7,6 +7,7 @@ import { modulo } from "../modulo/modulo";
 import { maximo } from "../maximo/maximo";
 import { minimo } from "../minimo/minimo";
 import { media } from "../media/media";
+import { logaritmo } from "../logaritmo/logaritmo";
 
 //Suma---------------------------------------------
 describe("Ui Addition - Component", () => {
@@ -204,6 +205,55 @@ describe("Ui Media - Component", () => {
     let result = 0;
     result = media(5, 2);
     expect(result).toBe(3.5);
+  });
+
+  it("Should set operator1 model through ngModel", async () => {
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(
+      By.css('input[name="operator1"]')
+    ).nativeElement;
+    inputElement.value = "3.1416";
+    inputElement.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(component.operator1).toEqual(3.1416);
+  });
+
+  it("Should set operator2 model through ngModel", async () => {
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(
+      By.css('input[name="operator2"]')
+    ).nativeElement;
+    inputElement.value = "2.71";
+    inputElement.dispatchEvent(new Event("input"));
+    fixture.detectChanges();
+    expect(component.operator2).toEqual(2.71);
+  });
+});
+
+
+describe("Ui Logaritmo - Component", () => {
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [UiComponent],
+      imports: [FormsModule],
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it("Should call logaritmo method", () => {
+    let result = 0;
+    result = logaritmo(2, 2);
+    expect(result).toBe(1);
   });
 
   it("Should set operator1 model through ngModel", async () => {
